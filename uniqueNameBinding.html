@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Form Binding - uniqueName</title>
+</head>
+<body>
+<input data-bind="value: firstName, uniqueName: true" />
+<div data-bind="html:firstName" ></div>
+<p>Other Countries</p>
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: availableCountries">
+        <tr>
+            <td data-bind="text: $data, uniqueName: true"></td>
+            <td><button data-bind="click: $parent.removeItem">Remove Item</button></td>
+        </tr>
+    </tbody>
+</table>
+<script src="Scripts/knockout-3.0.0.js" type='text/javascript'></script>
+<script type="text/javascript">  
+    var viewModel = {
+        availableCountries: ko.observableArray(['USA','USA', 'Australia', 'SriLanka']), // These are the initial options
+        firstName: ko.observable("Matt"), // Observable
+        lastName: "Daemon",      // Not observable,
+        removeItem: function (item) {
+                this.availableCountries.remove(item);
+        },
+    };
+    ko.applyBindings(viewModel);
+</script>
+</body>
+</html>

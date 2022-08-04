@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Form Binding - selectedOptions</title>
+</head>
+<body>
+    <p>Destination country: <select data-bind="options: availableCountries, selectedOptions: chosenCountries" multiple="true"></select></p>
+    <input type="button" data-bind="click: addCountry" value="Add Country"/> 
+    <p>Other Countries</p>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: availableCountries">
+            <tr>
+                <td data-bind="text: $data"></td>
+                <td><button data-bind="click: $parent.removeItem">Remove Item</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Chosen Countries</p>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: chosenCountries">
+            <tr>
+                <td data-bind="text: $data"></td>
+                <td><button data-bind="click: $parent.removeItem2">Remove Item</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="Scripts/knockout-3.0.0.js" type='text/javascript'></script>
+    <script type="text/javascript">
+        var viewModel = {
+            availableCountries: ko.observableArray(['USA', 'Australia', 'SriLanka']), // These are the initial options
+            chosenCountries: ko.observableArray(['Australia']), // Initially, only Germany is selected
+            addCountry: function () {
+                this.chosenCountries.push('SriLanka');
+            },
+            removeItem: function (item) {
+                this.availableCountries.remove(item);
+            },
+            removeItem2: function (item) {
+                this.chosenCountries.remove(item);
+            }
+        };
+        ko.applyBindings(viewModel);
+    </script>
+</body>
+</html>
