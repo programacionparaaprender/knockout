@@ -1,7 +1,7 @@
 
 
 ### curso
-https://indra.udemy.com/course/master-knockoutjs-javascript/learn/lecture/787248#reviews
+https://www.udemy.com/course/master-knockoutjs-javascript/
 
 
 ### remove items
