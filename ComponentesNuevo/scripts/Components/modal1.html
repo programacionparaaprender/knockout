@@ -1,0 +1,42 @@
+<!-- ko if: (Model != null) -->
+<div class="dialogbox box-icon">
+    <div class="icon">
+        <div class="row">
+            <div class="col-12">
+                <img class="img-fluid" data-bind="attr: { src: Icono }" />
+            </div>
+        </div>
+    </div>
+
+    <div class="title">
+        <div class="row">
+            <div class="col-12">
+                <span data-bind="text: Model().titulo"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="row">
+            <div class="col-12">
+                <p data-bind="html: Model().texto"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="action">
+        <div class="row">
+            <!-- ko if: (Model().textBoton) -->
+            <div class="col-12">
+                <button class="btn btn-main btn-new" data-bind="click: CallBack, text: Model().textBoton"></button>
+            </div>
+            <!-- /ko -->
+            <!-- ko if: (Model().textBotonCancelar) -->
+            <div class="col-12 mt-3">
+                <button class="btn btn-new" data-bind="click: callbackCancelar, text: Model().textBotonCancelar"></button>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>
+<!-- /ko -->

@@ -1,0 +1,27 @@
+<!-- ko if: (Model != null) -->
+<div class="dialogbox new-version extra">
+    <div class="title">
+        <div class="row">
+            <div class="col-12">
+                <span data-bind="html: Model().titulo"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="row">
+            <div class="col-12">
+                <p data-bind="html: Model().texto"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="action">
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-main btn-new" data-bind="click: CallBack, text: Model().textBoton"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ko -->
