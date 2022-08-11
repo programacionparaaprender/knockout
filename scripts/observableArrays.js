@@ -32,6 +32,8 @@ var ListModel = function (items) {
         }
     }.bind(this);
 
+    
+
     this.removeItem = function (item) {
         this.items.remove(item);
     }.bind(this);
