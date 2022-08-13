@@ -1,7 +1,8 @@
 define(['knockout'], function (ko) {
     function MyComponentViewModel(data) {
         var me = this;
-        me.Titulo = "Módulo número uno";
+        me.Titulo = "Ejemplo uno";
+        me.Contenido = "prueba de contenido";
 
     }
     return MyComponentViewModel;

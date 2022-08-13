@@ -2,9 +2,12 @@
 define(['jquery', 
 'knockout',
     'scripts/Components/modal1',
-    'text!scripts/Components/modal1.html'
+    'text!scripts/Components/modal1.html',
+    'scripts/Components/modal2',
+    'text!scripts/Components/modal2.html'
 ], function ($, ko,
-    modal1, modal1_html
+    modal1, modal1_html,
+    modal2, modal2_html
     )
     
 {    
@@ -18,6 +21,12 @@ define(['jquery',
             viewModel: { require: "scripts/Components/modal2" },
         template: { require: "text!scripts/Components/modal2.html" }
         });
+    ko.components.register('modal3', {
+        viewModel: modal2,
+        template: modal2_html
+    });
+
+
 
     ko.applyBindings();
     
