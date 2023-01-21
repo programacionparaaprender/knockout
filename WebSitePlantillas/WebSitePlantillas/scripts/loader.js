@@ -25,7 +25,10 @@ define(['jquery',
         viewModel: modal2,
         template: modal2_html
     });
-
+    ko.components.register('modal4', {
+        viewModel: { require: "scripts/Components/modal4" },
+        template: { require: "text!scripts/Components/modal4.html" }
+    });
 
 
     ko.applyBindings();
